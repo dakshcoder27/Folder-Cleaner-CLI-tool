@@ -1,158 +1,153 @@
-📁 Smart Folder Organizer 
+# 📁 Smart Folder Organizer
 
-A simple command-line utility that automatically organizes files in a folder (like Downloads) into categorized subfolders and also supports reverting the changes safely.
+A simple command-line utility that automatically organizes files in a folder (like Downloads) into categorized subfolders and also supports reverting the changes safely. This was made as an assignment for Smartmove.ai Intern.
 
-🔍 Problem Statement
+## 📖 Table of Contents
+
+- [Problem Statement](#problem-statement)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Folder Categories](#folder-categories)
+- [How to Run](#how-to-run)
+- [Revert Mechanism](#revert-mechanism-undo-support)
+- [Sample Output](#sample-output)
+
+## 🔍 Problem Statement
 
 My Downloads folder gets cluttered with different types of files such as documents, images, videos, archives, and installers.
 Manually organizing them is time-consuming and often leads to mistakes.
 
 There is no simple built-in tool that:
 
-Organizes files automatically
+- Organizes files automatically
+- Allows undo/revert in case of a mistake
 
-Allows undo/revert in case of a mistake
-
-💡 Solution
+## 💡 Solution
 
 This project provides a CLI-based folder organizer that:
 
-Sorts files into folders based on file type
+- Sorts files into folders based on file type
+- Creates folders automatically
+- Moves unknown file types into an Others folder
+- Logs all changes
+- Allows reverting files back to their original location
 
-Creates folders automatically
+## ✨ Features
 
-Moves unknown file types into an Others folder
+- 📂 Automatic file organization
+- 🔁 Revert / Undo support
+- 🗂️ Handles Others folder safely
+- 🧾 Logging for safe recovery
+- ⚙️ Uses standard Python libraries only
+- 🖥️ Cross-platform (Windows / Linux / macOS)
 
-Logs all changes
+## 🛠️ Technologies Used
 
-Allows reverting files back to their original location
+- Language: Python 3
+- Libraries:
+  - os – file system interaction
+  - shutil – file moving operations
+  - sys – command-line arguments
 
-✨ Features
+## 📁 Folder Categories
 
-📂 Automatic file organization
+| Folder Name | File Types               |
+| ----------- | ------------------------ |
+| Images      | .jpg, .jpeg, .png, .gif  |
+| Documents   | .pdf, .docx, .txt, .pptx |
+| Videos      | .mp4, .mkv, .avi         |
+| Archives    | .zip, .rar               |
+| Programs    | .exe, .msi               |
+| Others      | Unknown file types       |
 
-🔁 Revert / Undo support
+## ▶️ How to Run
 
-🗂️ Handles Others folder safely
+### 1️⃣ Organize Files
 
-🧾 Logging for safe recovery
-
-⚙️ Uses standard Python libraries only
-
-🖥️ Cross-platform (Windows / Linux / macOS)
-
-🛠️ Technologies Used
-
-Language: Python 3
-
-Libraries:
-
-os – file system interaction
-
-shutil – file moving operations
-
-sys – command-line arguments
-
-(All are standard libraries)
-
-📁 Folder Categories
-Folder Name	File Types
-Images	.jpg, .jpeg, .png, .gif
-Documents	.pdf, .docx, .txt, .pptx
-Videos	.mp4, .mkv, .avi
-Archives	.zip, .rar
-Programs	.exe, .msi
-Others	Unknown file types
-▶️ How to Run
-1️⃣ Organize Files
+```bash
 python folder_cleaner.py organize <folder_path>
+```
 
+**Example:**
 
-Example:
-
+```bash
 python folder_cleaner.py organize C:\Users\Daksh\Downloads
+```
 
-2️⃣ Revert Files (Undo)
+### 2️⃣ Revert Files (Undo)
+
+```bash
 python folder_cleaner.py revert <folder_path>
-
+```
 
 This restores all files to their original location using the log file.
 
-🔁 Revert Mechanism (Undo Support)
+## 🔁 Revert Mechanism (Undo Support)
 
-During organization, all file movements are stored in organize_log.txt
+During organization, all file movements are stored in `organize_log.txt`
 
 Each entry records:
 
+```
 filename | destination_folder
+```
 
+The revert command reads this log and safely moves files back. This ensures data safety and prevents accidental data loss.
 
-The revert command reads this log and safely moves files back
+## 📸 Screenshots
 
-This ensures data safety and prevents accidental data loss.
+### Sample Output
 
-📸 Sample Output
+```
 ✅ Organized 24 files successfully.
 🔁 Reverted 24 files successfully.
+```
 
-
-Screenshots included in submission:
+### Before Organization
 
 ![Before Organization](screenshots/before.png)
 
+### After Organization
+
 ![After Organization](screenshots/after.png)
 
-After revert
 
-🎥 Video Demonstration
+## 🎥 Video Demonstration
 
-A 3–5 minute unlisted YouTube video demonstrating: https://youtu.be/AY1KyMemLvs
+A 3–5 minute unlisted YouTube video demonstrating:
 
-Problem statement
+- Problem statement
+- Program execution
+- Folder organization
+- Revert functionality
+- Design decisions
 
-Program execution
+📹 Watch here: [https://youtu.be/AY1KyMemLvs](https://youtu.be/AY1KyMemLvs)
 
-Folder organization
+## 🧠 Design Decisions
 
-Revert functionality
+- **CLI-based**: Lightweight and fast
+- **Logging-based revert**: Safe and reliable undo
+- **Dictionary-based rules**: Easy to extend
+- **Standard libraries only**: No external dependencies
+- **Modular functions**: Clean and readable code
 
-Design decisions
+## 🚀 Possible Enhancements
 
-🧠 Design Decisions
+- Dry-run mode (preview changes)
+- Custom rules via config file
+- GUI using Tkinter
+- Duplicate file detection
+- Timestamp-based organization
 
-CLI-based: Lightweight and fast
-
-Logging-based revert: Safe and reliable undo
-
-Dictionary-based rules: Easy to extend
-
-Standard libraries only: No external dependencies
-
-Modular functions: Clean and readable code
-
-🚀 Possible Enhancements
-
-Dry-run mode (preview changes)
-
-Custom rules via config file
-
-GUI using Tkinter
-
-Duplicate file detection
-
-Timestamp-based organization
-
-✅ Conclusion
+## ✅ Conclusion
 
 This project demonstrates:
 
-Problem understanding
-
-Clean coding practices
-
-Error handling
-
-Reversible system design
+- Problem understanding
+- Clean coding practices
+- Error handling
+- Reversible system design
 
 Practical real-world usefulness
 
