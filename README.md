@@ -98,9 +98,9 @@ This ensures data safety and prevents accidental data loss.
 
 Screenshots included in submission:
 
-Before organization
+![Before Organization](screenshots/before.png)
 
-After organization
+![After Organization](screenshots/after.png)
 
 After revert
 
